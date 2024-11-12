@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import errorHandler from "./middleware/errorHandler.js";
 import taskRoutes from "./routes/taskRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/tasks", taskRoutes);
+app.use("/api/users", userRoutes);
 
 app.use(errorHandler); // Error handling middleware
 
