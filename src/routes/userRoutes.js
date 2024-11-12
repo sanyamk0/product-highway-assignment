@@ -4,7 +4,7 @@ import { validateUserInput } from "../middleware/inputValidation.js";
 
 const router = express.Router();
 
-router.post("/", userController.createUser);
+router.post("/", validateUserInput, userController.createUser);
 router.get("/", userController.getUsers);
 router.get("/:id", userController.getUserById);
 router.put("/:id", validateUserInput, userController.updateUser);
