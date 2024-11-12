@@ -43,10 +43,29 @@ This is a RESTful API for a task management system built with Node.js, Express.j
    ```
 
 4. Start the development server:
+
    ```bash
    npm run dev
    ```
+
    The API will be available at `http://localhost:3000`.
+
+5. In Supabase dashboard create tables
+
+   ```bash
+   Tasks
+   title : text
+   description : text
+   status : text
+   user_id : uuid
+   ```
+
+   ```bash
+   Users
+   name : text
+   email : text
+   password : text
+   ```
 
 ## API Documentation
 
