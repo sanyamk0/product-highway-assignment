@@ -3,12 +3,18 @@ import cors from "cors";
 import errorHandler from "./middleware/errorHandler.js";
 import taskRoutes from "./routes/taskRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import swaggerUi from "swagger-ui-express";
+import YAML from "yamljs";
 
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// API documentation
+const swaggerDocument = YAML.load("./swagger.yaml");
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Routes
 app.use("/api/tasks", taskRoutes);
