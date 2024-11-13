@@ -17,6 +17,7 @@ const swaggerDocument = YAML.load("./swagger.yaml");
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Routes
+app.get('/', (req, res)=>res.send("Server is live"));
 app.use("/api/tasks", taskRoutes);
 app.use("/api/users", userRoutes);
 
