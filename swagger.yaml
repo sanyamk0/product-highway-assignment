@@ -4,7 +4,7 @@ info:
   description: A RESTful API for managing tasks and users
   version: 1.0.0
 servers:
-  - url: https://product-highway-assignment.onrender.com/
+  - url: https://product-highway-assignment.onrender.com/api
 paths:
   /tasks:
     post:
